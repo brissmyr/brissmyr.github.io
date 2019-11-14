@@ -1,1 +1,25 @@
-Hello World
+<html>
+  <head>
+    <title>Verify</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://castle-verify-js.herokuapp.com/v1/verify.js"></script>
+    <script src="client.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4 offset-sm-4">
+            <h4>Verify this device</h1>
+            <p>We've sent a 6-digit PIN code to your phone.</p>
+            <form id="code-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="code-field" placeholder="E.g. 283179">
+                </div>
+                <button type="submit" class="btn btn-primary">Verify</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
