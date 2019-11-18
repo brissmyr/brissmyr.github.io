@@ -3,6 +3,7 @@
     <title>Verify</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       var getUrlParameter = function(name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -25,14 +26,26 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-sm-4 offset-sm-4">
+
+          <div class="factor-sms" style="display: none;">
             <h4>Verify this device</h1>
             <p>We've sent a 6-digit PIN code to your phone.</p>
             <form id="code-form">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="code-field" placeholder="E.g. 283179">
-                </div>
-                <button type="submit" class="btn btn-primary">Verify</button>
+              <div class="form-group">
+                <input type="text" class="form-control" id="code-field" placeholder="E.g. 283179">
+              </div>
+              <button type="submit" class="btn btn-primary">Verify</button>
             </form>
+          </div>
+
+          <div class="factor-captcha" style="display: none;">
+            <h4>Verify this CAPTCHA</h1>
+            <p>This is for your own safety.</p>
+            <form action="?" method="POST">
+              <div class="g-recaptcha" data-sitekey="6LcwKsMUAAAAAFSFdj1f8cKw8qKaERLotmyk6s3Z" data-callback="reCaptchaCallback"></div>
+            </form>
+          </div>
+
         </div>
       </div>
     </div>
